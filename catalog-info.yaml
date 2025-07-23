@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: lmllp3vdq-python-gitops
+  description: This is GitOps manifest for lmllp3vdq-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=lmllp3vdq-python
+    backstage.io/kubernetes-id: lmllp3vdq-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: lmllp3vdq-python
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:lmllp3vdq-python
